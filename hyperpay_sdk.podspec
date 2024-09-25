@@ -1,7 +1,3 @@
-#
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html.
-# Run `pod lib lint payment.podspec` to validate before publishing.
-#
 Pod::Spec.new do |s|
   s.name             = 'hyperpay_sdk'
   s.version          = '5.1.0'
@@ -13,8 +9,14 @@ Pod::Spec.new do |s|
   s.source           = { :path => '.' }
 
   s.preserve_paths = 'OPPWAMobile.xcframework', 'ipworks3ds_sdk.xcframework'
-  s.xcconfig = { 'OTHER_LDFLAGS' => '-framework OPPWAMobile -framework ipworks3ds_sdk ' }
   s.vendored_frameworks = 'OPPWAMobile.xcframework', 'ipworks3ds_sdk.xcframework'
-  s.static_framework = true 
 
+  # Enforce Swift 5.10 version
+  s.xcconfig = {
+    'SWIFT_VERSION' => '6.0',
+    'OTHER_LDFLAGS' => '-framework OPPWAMobile -framework ipworks3ds_sdk'
+  }
+  
+  # Mark as a static framework
+  s.static_framework = true
 end
