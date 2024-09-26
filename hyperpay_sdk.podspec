@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'hyperpay_sdk'
-  s.version          = '6.14.0'
+  s.version          = '5.1.0'
   s.summary          = 'A new Flutter project.'
   s.description      = 'DESC A new Flutter project.DESC'
   s.homepage         = 'https://pub.dev/packages/hyperpay_plugin'
